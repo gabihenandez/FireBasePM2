@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-title>Productos</ion-title>
+    <ion-buttons slot="primary" (click)="signOut()">
+      <ion-button icon-right  color="success">  
+        <ion-icon name="exit-outline" > </ion-icon>  </ion-button>
+    </ion-buttons>    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="text-align:center">
+  <ion-card>
+    <img src="https://ellafashion.com/images/content/digital-price-tag-on-garnment.jpg">
+    <br>
+  </ion-card> 
+  <br>
+  <ion-label style="text-align: center;">
+    <h1 *ngIf="show">{{datosQr.name}}</h1>
+  </ion-label>
+  <ion-button (click)="QRBoton()" color="success"> Lector QR
+    <ion-icon name="qr-code-outline"> </ion-icon>  </ion-button>
+</ion-content>
+

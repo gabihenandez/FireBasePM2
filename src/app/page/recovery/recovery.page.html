@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button
+        defaultHref="/"
+        text= "Regresar"
+        color= "primary"
+        mode= "ios"
+        >
+      
+      </ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="text-align: center !important;">
+    <form class="example-form" #formUser="ngForm" >
+      <br>
+      <ion-row>
+        <ion-col>
+          <mat-form-field class="example-full-width" >
+            <mat-label style="color: white;">Correo Electronico</mat-label>
+            <br>
+            <input type="email" matInput name="email"
+            placeholder="Correo"
+            [(ngModel)]="user.email" 
+            (keyup)="onKeyUpEmail($event)"
+            required>
+          </mat-form-field>
+          <br>
+          <br>
+          <ion-button  (click)="onSubmit(formUser) "  color="success" [disabled]="user.flagEmail==false">Aceptar</ion-button>
+        </ion-col>
+      </ion-row>
+    </form>
+</ion-content>

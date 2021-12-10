@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="light">
+    <ion-title>Datos Usuarios</ion-title>
+    <ion-buttons slot="primary" (click)="signOut()">
+      <ion-button icon-right routerLink="/home" color="success">
+        <ion-icon name="exit-outline"> </ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content style="text-align: center !important; color: ios body;">
+  <form action="" #formUser="ngForm">
+    <ion-row>
+      <ion-col>
+        <mat-form-field class="example-full-width">
+          <mat-label style="color:rgb(0, 0, 0);">Nombre</mat-label>
+          <input matInput #userCont placeholder="Nombre" type="text" [(ngModel)]="usuariox.nombre"
+            (keyup)="onKeyUp($event)" name="nombre" required>
+          <mat-hint aling="end">{{userCont.value.length}}</mat-hint>
+        </mat-form-field>
+        <br>
+        <br>
+        <mat-form-field class="example-full-width">
+          <mat-label style="color: rgb(0, 0, 0);">Apellido Paterno</mat-label>
+          <input matInput #paternoCont placeholder="Apellido Paterno" type="text" [(ngModel)]="usuariox.paterno"
+            (keyup)="onKeyUp($event)" name="paterno" required>
+          <mat-hint aling="end">{{paternoCont.value.length}}</mat-hint>
+        </mat-form-field>
+        <br>
+        <br>
+        <mat-form-field class="example-full-width">
+          <mat-label style="color: rgb(0, 0, 0);">Apellido Materno</mat-label>
+          <input matInput #maternoCont placeholder="Apellido Materno" type="text" [(ngModel)]="usuariox.materno"
+            (keyup)="onKeyUp($event)" name="materno" required>
+          <mat-hint aling="end">{{maternoCont.value.length}}</mat-hint>
+        </mat-form-field>
+        <br>
+        <br>
+        <br>
+        <mat-form-field class="example-full-width">
+          <mat-label style="color: rgb(0, 0, 0);">Telefono</mat-label>
+          <input matInput #phoneCont placeholder="Telefono" type="text" [(ngModel)]="usuariox.phone"
+            (keyup)="onKeyPhone($event)" name="phone" onkeypress="if(this.value.length == 10 ) return false;"
+            required>
+          <mat-hint aling="end">{{phoneCont.value.length}}</mat-hint>
+        </mat-form-field>
+        <br>
+        <br>
+        <ion-button (click)="onSubmit(formUser)" color="success"  [disabled]="user.phone.length !=10 ||user.flagUser==false || user.flagPaterno == false 
+            || user.flagMaterno==false  || user.flagPhone==false">Aceptar</ion-button>
+      </ion-col>
+    </ion-row>
+  </form>
+</ion-content>

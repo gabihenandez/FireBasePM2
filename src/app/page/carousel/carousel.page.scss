@@ -1,0 +1,11 @@
+ion-slides {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+page-slider{
+    .swiper-pagination-bullet-activate{
+        background:white ;
+    }
+}
